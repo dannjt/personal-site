@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daniel T. | Data Engineer</title>
+  <meta name="description" content="Daniel T., Data Engineer">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafaf7;
+      --text: #1a1a1a;
+      --navy: #1f2a44;
+      --white: #ffffff;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100svh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem 1rem;
+    }
+    main {
+      width: 100%;
+      max-width: 32rem;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin: 0 0 1rem;
+      line-height: 1.2;
+    }
+    #pitch {
+      font-size: 1.125rem;
+      margin: 0 0 2rem;
+    }
+    button {
+      appearance: none;
+      border: 0;
+      min-height: 44px;
+      padding: 0.75rem 1.75rem;
+      border-radius: 8px;
+      background: var(--navy);
+      color: var(--white);
+      font: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:focus {
+      outline: none;
+    }
+    button:focus-visible {
+      outline: 3px solid var(--navy);
+      outline-offset: 3px;
+    }
+    #alt {
+      margin: 1.25rem 0 0;
+      font-size: 0.95rem;
+      word-break: break-word;
+    }
+    noscript p {
+      margin: 1.5rem 0 0;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Daniel T.</h1>
+    <p id="pitch">I'm a data engineer who takes data from ingestion to the decisions that depend on it, and I'm always happy to talk shop.</p>
+    <button id="email" type="button">Email me</button>
+    <p id="alt" aria-live="polite" hidden></p>
+    <noscript><p>Turn on JavaScript to use the email button.</p></noscript>
+  </main>
+  <script>
+    (function () {
+      var encoded = "ZG5sdGFsdEBnbWFpbC5jb20=";
+      var button = document.getElementById("email");
+      button.addEventListener("click", function () {
+        var address = atob(encoded);
+        var scheme = "mail" + "to:";
+        var alt = document.getElementById("alt");
+        alt.textContent = "No mail app? Write to " + address;
+        alt.hidden = false;
+        window.location.href = scheme + address + "?subject=Hello%20Daniel";
+      });
+    })();
+  </script>
+</body>
+</html>
